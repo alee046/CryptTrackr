@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { Header } from './src/components';
 
 export default class App extends Component {
-  render() {
-    return (
-      <View>
-        <Text>CRYPTOS!</Text>
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View>
+                <Header/>
+            </View>
+        );
+    }
 }
+
