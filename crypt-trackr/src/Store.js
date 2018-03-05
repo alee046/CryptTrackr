@@ -25,5 +25,4 @@ const Store = createStore(
         })
     )
 );
-console.log(Store.getState());
 export default Store;
