@@ -4,7 +4,7 @@ import {
     FETCHING_COIN_DATA_FAIL
 } from './../Utils/ActionTypes';
 
-const iniitialState = {
+const initialState = {
     isFetching: null,
     data: [],
     hasError: false,
