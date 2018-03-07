@@ -6,7 +6,7 @@ import {
     Image
 } from 'react-native';
 
-import { images } from '../Utils/iconList';
+import { images } from '../Utils/CoinIcons';
 
 const styles = StyleSheet.create({
     container: {
@@ -24,11 +24,13 @@ const styles = StyleSheet.create({
 const { container, image, bold } = styles;
 
 const CoinCard = ( { symbol, coin_name, price_usd, percent_change_24h, percent_change_7d } ) => {
+// TODO: Use image dictionary
     return (
+      
         <View style={ container }>
             <Image 
-                style={ styles.images }
-                source={ { uri: images[ symbol.toLowerCase() ] } }
+                style={ styles.image }
+                source={ { uri: images[ symbol ] } }
             />
             <Text>{ symbol }</Text>
             <Text>{ coin_name }</Text>
