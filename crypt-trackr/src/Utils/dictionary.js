@@ -1,11 +1,11 @@
 const directory = '.././icons/';
-const fs = require('fs');
+const fs = require( 'fs' );
 
 
 const buildDictionary = () => {
     return new Promise ( ( resolve, reject ) => {
         fs.readdir( directory, ( err, files ) => {
-            if ( err ){
+            if ( err ) {
                 reject( err );
             }
             let dict = {}   
@@ -19,9 +19,9 @@ const buildDictionary = () => {
 
 }
 async function importDictionary () {
-    try{
+    try {
         let dict = await buildDictionary();
-        fs.writeFileSync('../dict.json', JSON.stringify( dict,  null, 4 ) );
+        fs.writeFileSync( '../dict.json', JSON.stringify( dict,  null, 4 ) );
     }
     catch ( err ) { 
         console.log( err );
