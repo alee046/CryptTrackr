@@ -18,7 +18,8 @@ const buildDictionary = () => {
     })
 
 }
-async function importDictionary () {
+
+export default async function importDictionary () {
     try {
         let dict = await buildDictionary();
         fs.writeFileSync( '../dict.json', JSON.stringify( dict,  null, 4 ) );
@@ -27,5 +28,5 @@ async function importDictionary () {
         console.log( err );
     }
 }
-importDictionary()
+// importDictionary()
 // console.log(dict)
