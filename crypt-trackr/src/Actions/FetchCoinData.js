@@ -6,11 +6,11 @@ import {
     FETCHING_COIN_DATA_FAIL
 } from './../Utils/ActionTypes';
 
-export default FetchCoinData = async ( ) => {
-    return dispatch => {
+export default FetchCoinData = ( ) => {
+    return async dispatch => {
         dispatch( { type: FETCHING_COIN_DATA } )
         try {
-            const data = axios.get( `${ apiBaseURL }/v1/ticker/?limit=10` );
+            const data = await axios.get( `${ apiBaseURL }/v1/ticker/?limit=10` );
             dispatch( { type: FETCHING_COIN_DATA_SUCCESS, payload: data } )
         } catch ( err ) {
             dispatch( { type: FETCHING_COIN_DATA_FAIL, payload: err.data } )
