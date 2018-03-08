@@ -38,7 +38,7 @@ class CryptoContainer extends Component {
                     <Spinner 
                         visible = { crypto.isFetching }
                         textContent = { "Loading..." }
-                        textStyle = {{color: '#253145'}}
+                        textStyle = { { color: '#253145' } }
                         animation = "fade"
                     />
                 </View>
@@ -46,12 +46,20 @@ class CryptoContainer extends Component {
             )
         }
         return (
-            <View>
+            <ScrollView contentContainerStyle={ contentContainer }>
               { this.renderCoinCards() }
-            </View>
+            </ScrollView>
         )
     } 
 };
+const styles = {
+    contentContainer: {
+        paddingBottom: 100,
+        paddingTop: 55
+    }
+}
+
+const { contentContainer } = styles;
 
 function mapStateToProps ( state ) {
     return {

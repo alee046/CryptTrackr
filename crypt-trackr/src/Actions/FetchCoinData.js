@@ -10,8 +10,8 @@ export default FetchCoinData = ( ) => {
     return async dispatch => {
         dispatch( { type: FETCHING_COIN_DATA } )
         try {
-            const data = await axios.get( `${ apiBaseURL }/v1/ticker/?limit=10` );
-            console.log(data)
+            let data = await axios.get( `${ apiBaseURL }/v1/ticker/?limit=10` )
+            
             dispatch( { type: FETCHING_COIN_DATA_SUCCESS, payload: data.data } )
         } catch ( err ) {
             dispatch( { type: FETCHING_COIN_DATA_FAIL, payload: err.data } )
